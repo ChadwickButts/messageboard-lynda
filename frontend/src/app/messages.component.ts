@@ -15,12 +15,12 @@ import { WebService } from './web.service';
 
 })
 
-export class MessagesComponent implements OnInit {
-    constructor(private service: WebService) {}
+export class MessagesComponent {
+    public messages;
 
-    async ngOnInit() {
-        var response = await this.service.getMessages();
-        console.log(response)
+    constructor(private service: WebService){
+            this.service.getMessages().subscribe(res => {
+                this.messages = res;
+            });
+        }
     }
-    messages: Array<object> = [];
-}
