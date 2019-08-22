@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { MessagesComponent } from './messages.component';
+import { NavbarComponent } from './navbar.component';
 
 @Component({
   selector: 'app-root',
-  template: '<h1>Hello {{title}}</h1><messages></messages>',
-  styleUrls: ['./app.component.css']
+  template: `
+    <navbar></navbar>
+    <router-outlet></router-outlet>
+  `
 })
 export class AppComponent {
-  title = 'frontend';
 }
